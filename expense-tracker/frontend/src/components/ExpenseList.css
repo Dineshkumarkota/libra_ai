@@ -1,0 +1,175 @@
+.expense-list {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.expense-list h2 {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.expenses-table {
+  overflow-x: auto;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 150px;
+  gap: 15px;
+  padding: 16px 20px;
+  background-color: var(--bg-color);
+  border-bottom: 2px solid var(--border-color);
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 150px;
+  gap: 15px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.table-row:hover {
+  background-color: var(--bg-color);
+}
+
+.table-row .amount {
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.category-tag.food {
+  background-color: #fed7d7;
+  color: #c53030;
+}
+
+.category-tag.transport {
+  background-color: #bee3f8;
+  color: #2c5aa0;
+}
+
+.category-tag.entertainment {
+  background-color: #fbd38d;
+  color: #d69e2e;
+}
+
+.category-tag.utilities {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.category-tag.healthcare {
+  background-color: #e9d8fd;
+  color: #553399;
+}
+
+.category-tag.shopping {
+  background-color: #fed7d7;
+  color: #9b2c2c;
+}
+
+.category-tag.education {
+  background-color: #bee3f8;
+  color: #1a365d;
+}
+
+.category-tag.other {
+  background-color: #e2e8f0;
+  color: #2d3748;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  background-color: #bee3f8;
+  color: #2c5aa0;
+}
+
+.edit-btn:hover {
+  background-color: #90cdf4;
+}
+
+.delete-btn {
+  background-color: #fed7d7;
+  color: #c53030;
+}
+
+.delete-btn:hover {
+  background-color: #fc8181;
+}
+
+.no-expenses {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-light);
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 1fr 1fr 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .table-header > div:nth-child(4),
+  .table-row > div:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .table-header > div:nth-child(3),
+  .table-header > div:nth-child(4),
+  .table-row > div:nth-child(3),
+  .table-row > div:nth-child(4) {
+    display: none;
+  }
+}
